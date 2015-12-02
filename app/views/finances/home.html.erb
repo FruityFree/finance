@@ -1,15 +1,19 @@
 <h2>Expenses</h2>
 <% @expenses.each do |e| %>
 <div >
-   <span class="expense">
-    − <%= e.amount %>
-    </span>
-    | 
-    <%=e.tag.try(:name) %> 
-    |
-    <%=e.spent_at%>
-</div>
-<div>
+  <span class="expense">
+  − <%= e.amount %>
+  </span>
+  |
+  <%=e.spent_on%>
+  |
+  <%=e.tag.try(:name) %> 
+  |
   <%= e.description %>
 </div>
 <% end %>
+
+<div>
+  <%= flash[:notice] %>
+</div>
+<%= render 'expense_form' %>

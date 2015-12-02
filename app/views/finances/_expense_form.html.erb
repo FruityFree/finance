@@ -1,0 +1,23 @@
+<h3> Add new expense </h3>
+<%= form_for @expense do |f| %>
+  <div>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.label :spent_on %>
+    <%= f.text_field :spent_on, value: Date.today.strftime("%d-%m-%Y") %>
+  </div>
+  <div>
+    <%= f.select :tag_id, Tag.all.map{|t| [t.name, t.id]} %> 
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -6,5 +6,5 @@ class Expense
 
   field :amount, type: Float
   field :description, type: String
-  field :spent_at, type: Date
+  field :spent_on, type: Date
 end
