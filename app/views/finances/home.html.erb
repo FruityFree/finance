@@ -1,4 +1,15 @@
 <h2>Expenses</h2>
 <% @expenses.each do |e| %>
-   − <%= e.amount %>
+<div >
+   <span class="expense">
+    − <%= e.amount %>
+    </span>
+    | 
+    <%=e.tag.try(:name) %> 
+    |
+    <%=e.spent_at%>
+</div>
+<div>
+  <%= e.description %>
+</div>
 <% end %>

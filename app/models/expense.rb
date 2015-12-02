@@ -2,9 +2,9 @@ class Expense
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  has_and_belongs_to_many :tags
+  belongs_to :tag
 
   field :amount, type: Float
   field :description, type: String
-
+  field :spent_at, type: Date
 end

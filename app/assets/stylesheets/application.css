@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  font-family: "Ubuntu", "PT sans", sans-serif;
+}
+ .expense{
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #aa3344;
+ }
