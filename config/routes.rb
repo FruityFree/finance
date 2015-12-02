@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
+
+
   root "finances#home"
+
+  resources :expenses
+  resources :users
+
+  get 'user_sessions/new', as: "login"
+  get 'user_sessions/create', as: "logout"
+  get 'user_sessions/destroy'
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -14,7 +25,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :expenses
+
 
   # Example resource route with options:
   #   resources :products do
