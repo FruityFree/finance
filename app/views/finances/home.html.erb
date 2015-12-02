@@ -1,19 +1,26 @@
 <h2>Expenses</h2>
-<% @expenses.each do |e| %>
-<div >
-  <span class="expense">
-  − <%= e.amount %>
-  </span>
-  |
-  <%=e.spent_on%>
-  |
-  <%=e.tag.try(:name) %> 
-  |
-  <%= e.description %>
-</div>
-<% end %>
 
-<div>
-  <%= flash[:notice] %>
+<div id="expenses-block">
+  <% @expenses.each do |e| %>
+  <div >
+    <span class="expense">
+    − <%= e.amount %>
+    </span>
+    |
+    <%=e.spent_on%>
+    |
+    <%=e.tag.try(:name) %> 
+    |
+    <%= e.description %>
+  </div>
+  <% end %>
+
+  <div>
+    <%= flash[:notice] %>
+  </div>
+  <%= render 'expense_form' %>
 </div>
-<%= render 'expense_form' %>
+
+<div id="login-block">
+    <%= current_user.email %> | <%= link_to "Logout", logout_path %>
+</div>

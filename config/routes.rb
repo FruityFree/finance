@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   root "finances#home"
 
   resources :expenses
-  resources :users
 
-  get 'user_sessions/new', as: "login"
-  get 'user_sessions/create', as: "logout"
-  get 'user_sessions/destroy'
+  resources :users
+  resources :user_sessions
+  get "logout" => "user_sessions#destroy", :as => "logout"
+  get "login" => "user_sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
 
   
   # The priority is based upon order of creation: first created -> highest priority.
