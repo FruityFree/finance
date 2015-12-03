@@ -9,6 +9,7 @@
 
 # ignore deploy file
 /config/deploy.rb
+/config/secrets.yml
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
